@@ -1,4 +1,4 @@
-# 🚀 Playwright + Cucumber Test Project
+# 🚀 RetoTecnicoQa-FrontEnd-Pacifico
 
 Este proyecto automatiza pruebas end-to-end sobre el sitio [SauceDemo](https://www.saucedemo.com) utilizando **Playwright**, **Cucumber** y el patrón **Page Object Model (POM)** en **TypeScript**.
 
