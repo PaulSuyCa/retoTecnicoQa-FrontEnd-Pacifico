@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# IDE files
+.idea/
+.vscode/
+
+# Playwright outputs and reports
+.playwright/
+playwright-report/
+test-results/
+dist/
+reports/
+*.zip
+
+# Env files and logs
+.env
+.env.*
+*.log
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Mac and Windows junk
+._*
+.swp
+ehthumbs.db
+Icon?
