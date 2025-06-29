@@ -1,0 +1,46 @@
+name: Tests Playwright + Cucumber
+
+on:
+  workflow_dispatch:        # Permite ejecución manual en Actions
+  pull_request:
+    branches:
+      - main                # Ejecutar solo para PRs a la rama main
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Instalar navegadores Playwright
+        run: npx playwright install --with-deps
+
+      - name: Ejecutar pruebas E2E
+        run: npm test
+
+      - name: Guardar reporte JSON de Cucumber
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-report
+          path: reports/
+
+      - name: Generar reporte HTML
+        run: npm run report
+
+      - name: Guardar reporte HTML
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-report
+          path: reports/html/
