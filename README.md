@@ -1,6 +1,6 @@
 # 🚀 Reto Técnico QA FrontEnd - SauceDemo
 
-Este proyecto automatiza pruebas end-to-end sobre el sitio [SauceDemo](https://www.saucedemo.com) utilizando **Playwright**, **Cucumber** y el patrón **Page Object Model (POM)** en **TypeScript**.
+Este proyecto automatiza pruebas **end-to-end** sobre el sitio [SauceDemo](https://www.saucedemo.com) utilizando **Playwright**, **Cucumber** y el patrón **Page Object Model (POM)** en **TypeScript**.
 
 ---
 
@@ -14,43 +14,62 @@ Este proyecto automatiza pruebas end-to-end sobre el sitio [SauceDemo](https://w
 ## 🛠️ Instalación y configuración
 
 1. **Clona el repositorio**
-   ```bash
    git clone https://github.com/PaulSuyCa/retoTecnicoQa-FrontEnd-Pacifico.git
    cd retoTecnicoQa-FrontEnd-Pacifico
-   ```
 
 2. **Instala las dependencias**
-   ```bash
    npm install
-   ```
 
 3. **Descarga los navegadores requeridos por Playwright**
-   ```bash
    npx playwright install
-   ```
 
 ---
 
 ## 🧪 Ejecución de pruebas
 
 Ejecuta todos los tests definidos en los archivos `.feature`:
-```bash
-npm test
-```
+   npm test
+Los resultados se muestran por consola y se genera un reporte JSON en la carpeta `/reports`.
 
 ---
 
-## 📝 Estructura del proyecto
+## 📊 Generar reporte HTML
 
-```
-web-playwright-testing/
+Si tienes configurado un generador de reportes (ej: `multiple-cucumber-html-reporter`):
+
+1. **Corre los tests** (genera el JSON):
+   npm test
+
+2. **Genera el reporte HTML:**
+   npm run report
+   Luego abre `reports/html/index.html` en tu navegador.
+
+---
+
+## ⚙️ CI/CD - GitHub Actions
+
+Este proyecto incluye un workflow en `.github/workflows/Playwright.yml` que ejecuta las pruebas automáticamente:
+- En cada Pull Request a `develop`
+- O manualmente desde la pestaña Actions en GitHub
+
+Los artefactos generados (reporte y evidencias) estarán disponibles al finalizar la ejecución.
+
+---
+
+## 🏗️ Estructura del proyecto
+
+retoTecnicoQa-FrontEnd-Pacifico/
 │
 ├── features/
-│   ├── saucedemo.feature             # Escenarios de prueba (Gherkin)
-│   ├── step-definitions/
-│   │    └── saucedemo.steps.ts       # Definiciones de pasos
+│   ├── login.feature                 # Escenarios de prueba (Gherkin) 
+│   ├── carrito.feature
+│   └── checkout.feature              
+│   ├── step-definitions/             # Definiciones de pasos
+│   │    ├── login.steps.ts
+│   │    ├── carrito.steps.ts
+│   │    └── checkout.steps.ts       
 │   └── support/
-│        └── world.ts                 # Hooks y Custom World
+│        └── world.ts                 # Custom World
 │
 ├── pages/
 │   ├── LoginPage.ts                  # Page Object para Login
@@ -60,26 +79,17 @@ web-playwright-testing/
 │
 ├── .gitignore
 ├── package.json
-├── playwright.config.ts
-└── tsconfig.json
-```
+├── tsconfig.json
+└── README.md
 
 ---
 
-## 📊 Reporte HTML de pruebas
+## 📋 Estrategia de Automatización
 
-Si tienes configurado un generador de reportes (ej: `multiple-cucumber-html-reporter`):
-
-1. **Ejecuta los tests (genera el JSON):**
-   ```bash
-   npm test
-   ```
-
-2. **Genera el reporte HTML:**
-   ```bash
-   npm run report
-   ```
-   Luego abre `reports/html/index.html` en tu navegador.
+- **Playwright** interactúa con el navegador real para simular usuarios finales.
+- **Cucumber** permite definir escenarios en lenguaje natural Gherkin, facilitando la colaboración con negocio y QA manual.
+- **POM (Page Object Model):** Cada página se modela como una clase independiente para máxima reutilización y mantenibilidad.
+- **Los escenarios cubren:** login válido, login inválido, agregar productos, ver carrito, y compra completa con distintos tipos de usuario.
 
 ---
 
