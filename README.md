@@ -61,22 +61,21 @@ Los artefactos generados (reporte y evidencias) estarán disponibles al finaliza
 retoTecnicoQa-FrontEnd-Pacifico/
 │
 ├── src/
-│   ├──features/
-│   │    ├── login.feature            # Escenarios de prueba (Gherkin) 
+│   ├── features/
+│   │    ├── login.feature
 │   │    ├── carrito.feature
-│   │    └── checkout.feature              
-│   ├── step-definitions/             # Definiciones de pasos
+│   │    └── checkout.feature
+│   ├── step-definitions/
 │   │    ├── login.steps.ts
 │   │    ├── carrito.steps.ts
-│   │    └── checkout.steps.ts       
+│   │    └── checkout.steps.ts
 │   ├── support/
-│   │    └── world.ts                 # Custom World
-│   │
+│   │    └── world.ts
 │   └── pages/
-│        ├── LoginPage.ts             # Page Object para Login
-│        ├── InventoryPage.ts         # Page Object de productos
-│        ├── CartPage.ts              # Page Object del carrito
-│        └── CheckoutPage.ts          # Page Object del checkout
+│        ├── LoginPage.ts
+│        ├── InventoryPage.ts
+│        ├── CartPage.ts
+│        └── CheckoutPage.ts
 │
 ├── .gitignore
 ├── package.json
