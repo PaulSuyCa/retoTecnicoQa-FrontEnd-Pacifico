@@ -56,8 +56,9 @@ Los artefactos generados (reporte y evidencias) estarán disponibles al finaliza
 
 ---
 
-## 🏗️ Estructura del proyecto
+## 🗂️ Estructura del proyecto
 
+```
 retoTecnicoQa-FrontEnd-Pacifico/
 │
 ├── src/
@@ -81,6 +82,7 @@ retoTecnicoQa-FrontEnd-Pacifico/
 ├── package.json
 ├── tsconfig.json
 └── README.md
+```
 
 ---
 
