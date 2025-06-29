@@ -69,14 +69,14 @@ retoTecnicoQa-FrontEnd-Pacifico/
 │   │    ├── login.steps.ts
 │   │    ├── carrito.steps.ts
 │   │    └── checkout.steps.ts       
-│   └── support/
-│        └── world.ts                 # Custom World
-│
-├── pages/
-│   ├── LoginPage.ts                  # Page Object para Login
-│   ├── InventoryPage.ts              # Page Object de productos
-│   ├── CartPage.ts                   # Page Object del carrito
-│   └── CheckoutPage.ts               # Page Object del checkout
+│   ├── support/
+│   │    └── world.ts                 # Custom World
+│   │
+│   └── pages/
+│        ├── LoginPage.ts             # Page Object para Login
+│        ├── InventoryPage.ts         # Page Object de productos
+│        ├── CartPage.ts              # Page Object del carrito
+│        └── CheckoutPage.ts          # Page Object del checkout
 │
 ├── .gitignore
 ├── package.json
