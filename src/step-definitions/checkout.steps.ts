@@ -1,7 +1,7 @@
 import { When, Then } from '@cucumber/cucumber';
 import { expect } from 'chai';
 import { CustomWorld } from '../support/world';
-import { CheckoutPage } from '../../pages/CheckoutPage';
+import { CheckoutPage } from '../pages/CheckoutPage';
 
 // Completar proceso de compra
 When('completa el proceso de compra con los datos {string}, {string} y código postal {string}',

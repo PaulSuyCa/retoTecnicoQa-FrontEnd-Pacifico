@@ -49,38 +49,40 @@ Si tienes configurado un generador de reportes (ej: `multiple-cucumber-html-repo
 ## ⚙️ CI/CD - GitHub Actions
 
 Este proyecto incluye un workflow en `.github/workflows/Playwright.yml` que ejecuta las pruebas automáticamente:
-- En cada Pull Request a `develop`
+- En cada Pull Request a `main`
 - O manualmente desde la pestaña Actions en GitHub
 
 Los artefactos generados (reporte y evidencias) estarán disponibles al finalizar la ejecución.
 
 ---
 
-## 🏗️ Estructura del proyecto
+## 🗂️ Estructura del proyecto
 
+```
 retoTecnicoQa-FrontEnd-Pacifico/
 │
-├── features/
-│   ├── login.feature                 # Escenarios de prueba (Gherkin) 
-│   ├── carrito.feature
-│   └── checkout.feature              
-│   ├── step-definitions/             # Definiciones de pasos
+├── src/
+│   ├── features/
+│   │    ├── login.feature
+│   │    ├── carrito.feature
+│   │    └── checkout.feature
+│   ├── step-definitions/
 │   │    ├── login.steps.ts
 │   │    ├── carrito.steps.ts
-│   │    └── checkout.steps.ts       
-│   └── support/
-│        └── world.ts                 # Custom World
-│
-├── pages/
-│   ├── LoginPage.ts                  # Page Object para Login
-│   ├── InventoryPage.ts              # Page Object de productos
-│   ├── CartPage.ts                   # Page Object del carrito
-│   └── CheckoutPage.ts               # Page Object del checkout
+│   │    └── checkout.steps.ts
+│   ├── support/
+│   │    └── world.ts
+│   └── pages/
+│        ├── LoginPage.ts
+│        ├── InventoryPage.ts
+│        ├── CartPage.ts
+│        └── CheckoutPage.ts
 │
 ├── .gitignore
 ├── package.json
 ├── tsconfig.json
 └── README.md
+```
 
 ---
 

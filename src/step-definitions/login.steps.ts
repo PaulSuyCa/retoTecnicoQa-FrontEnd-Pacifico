@@ -1,7 +1,7 @@
 import { Given, When, Then } from '@cucumber/cucumber';
 import { expect } from 'chai';
 import { CustomWorld } from '../support/world';
-import { LoginPage } from '../../pages/LoginPage';
+import { LoginPage } from '../pages/LoginPage';
 
 // Login exitoso e inválido
 Given('que el usuario está en la página de login', async function (this: CustomWorld) {
