@@ -49,7 +49,7 @@ Si tienes configurado un generador de reportes (ej: `multiple-cucumber-html-repo
 ## ⚙️ CI/CD - GitHub Actions
 
 Este proyecto incluye un workflow en `.github/workflows/Playwright.yml` que ejecuta las pruebas automáticamente:
-- En cada Pull Request a `develop`
+- En cada Pull Request a `main`
 - O manualmente desde la pestaña Actions en GitHub
 
 Los artefactos generados (reporte y evidencias) estarán disponibles al finalizar la ejecución.
@@ -60,10 +60,11 @@ Los artefactos generados (reporte y evidencias) estarán disponibles al finaliza
 
 retoTecnicoQa-FrontEnd-Pacifico/
 │
-├── features/
-│   ├── login.feature                 # Escenarios de prueba (Gherkin) 
-│   ├── carrito.feature
-│   └── checkout.feature              
+├── src/
+│   ├──features/
+│   │    ├── login.feature            # Escenarios de prueba (Gherkin) 
+│   │    ├── carrito.feature
+│   │    └── checkout.feature              
 │   ├── step-definitions/             # Definiciones de pasos
 │   │    ├── login.steps.ts
 │   │    ├── carrito.steps.ts

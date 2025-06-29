@@ -6,15 +6,11 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "strict": false,
+    "strict": true,
     "outDir": "dist",
-    "rootDirs": [
-      "./features",
-      "./pages"
-    ]
+    "rootDir": "src"
   },
   "include": [
-    "features/**/*.ts",
-    "pages/**/*.ts"
+    "src/**/*.ts"
   ]
 }

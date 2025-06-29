@@ -2,14 +2,13 @@
   "name": "saucedemo-playwright",
   "version": "1.0.0",
   "main": "index.js",
+  "author": "PaulSC",
+  "description": "Automatización con Playwright + Cucumber + POM sobre SauceDemo",
   "scripts": {
-    "test": "cucumber-js --require-module ts-node/register --require src/step-definitions/**/*.ts --require src/support/**/*.ts src/features --format json:reports/cucumber-report.json" ,
+    "test": "cucumber-js --require-module ts-node/register --require src/pages/**/*.ts --require src/step-definitions/**/*.ts --require src/support/**/*.ts src/features --format json:reports/cucumber-report.json",
     "report": "node generate-html-report.js"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
   "devDependencies": {
     "@cucumber/cucumber": "^11.3.0",
     "@playwright/test": "^1.52.0",
