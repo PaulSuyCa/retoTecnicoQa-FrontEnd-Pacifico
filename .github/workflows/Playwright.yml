@@ -25,7 +25,7 @@ jobs:
       - name: Instalar navegadores Playwright
         run: npx playwright install --with-deps
 
-      - name: Ejecutar pruebas E2E
+      - name: Ejecutar pruebas
         run: npm test
 
       - name: Guardar reporte JSON de Cucumber
