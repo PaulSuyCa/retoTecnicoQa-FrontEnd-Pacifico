@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js --require-module ts-node/register --require features/step-definitions/**/*.ts --require features/support/**/*.ts features --format json:reports/cucumber-report.json",
+    "test": "cucumber-js --require-module ts-node/register --require src/step-definitions/**/*.ts --require src/support/**/*.ts src/features --format json:reports/cucumber-report.json" ,
     "report": "node generate-html-report.js"
   },
   "keywords": [],
