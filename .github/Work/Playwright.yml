@@ -4,7 +4,7 @@ on:
   workflow_dispatch:        # Permite ejecución manual en Actions
   pull_request:
     branches:
-      - develop
+      - main
 
 jobs:
   test:
