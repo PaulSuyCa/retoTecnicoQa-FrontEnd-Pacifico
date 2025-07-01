@@ -11,6 +11,7 @@ playwright-report/
 test-results/
 dist/
 reports/
+screenshots/
 *.zip
 
 # Env files and logs

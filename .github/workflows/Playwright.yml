@@ -25,6 +25,9 @@ jobs:
       - name: Instalar navegadores Playwright
         run: npx playwright install --with-deps
 
+      - name: Limpiar screenshots y reports
+        run: rm -rf screenshots reports
+
       - name: Ejecutar pruebas
         run: npm test
 

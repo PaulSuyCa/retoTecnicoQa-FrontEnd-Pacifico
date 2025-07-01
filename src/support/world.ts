@@ -30,10 +30,3 @@ Before(async function (this: CustomWorld) {
   this.context = await this.browser.newContext();           // Nuevo contexto/pestaña limpia
   this.page = await this.context.newPage();                 // Nueva página
 });
-
-// Hook After: se ejecuta después de cada escenario
-After(async function (this: CustomWorld) {
-  if (this.browser) {
-    await this.browser.close(); // Cierra el navegador para limpiar memoria
-  }
-});
