@@ -8,10 +8,9 @@
     "forceConsistentCasingInFileNames": true,// Evita problemas de mayúsculas/minúsculas
     "strict": true,                          // Tipado estricto (¡recomendado!)
     "outDir": "dist",                        // Carpeta de salida de JS compilado (si compilas)
-    "rootDir": "src"                         // Carpeta raíz de tu código fuente
+    "rootDir": "src"                         // Carpeta raíz de tu código fuente                
   },
   "include": [
-    "src/**/*.ts",
-    "src/features/*.feature"
+    "src/**/*.ts"
   ]
 }

@@ -7,7 +7,18 @@
   "scripts": {
     "clean": "node src/scripts/clean.js",
     "test": "npm run clean && cucumber-js --require-module ts-node/register --require src/step-definitions/**/*.ts --require src/support/**/*.ts src/features --format json:reports/cucumber-report.json",
-    "report": "node src/scripts/generate-html-report.js"
+    "test:chromium": "npm run clean && cross-env BROWSER=chromium npm run test:base",
+    "test:chromium:tag": "npm run clean && cross-env BROWSER=chromium npm run test:tag --",
+    "test:firefox": "npm run clean && cross-env BROWSER=firefox npm run test:base",
+    "test:firefox:tag": "npm run clean && cross-env BROWSER=firefox npm run test:tag --",    
+    "test:webkit": "npm run clean && cross-env BROWSER=webkit npm run test:base",
+    "test:webkit:tag": "npm run clean && cross-env BROWSER=webkit npm run test:tag --",    
+    "test:allRemote": "npm run test:chromium:tag -- @SauceDemo && npm run test:firefox:tag -- @SauceDemo && npm run test:webkit:tag -- @SauceDemo",
+    "test:allLocal": "npm run test:chromium:tag -- @SauceDemo && npm run test:firefox:tag -- @SauceDemo",
+    "test:base": "cucumber-js --require-module ts-node/register --require src/step-definitions/**/*.ts --require src/support/**/*.ts src/features --format json:reports/cucumber-report.json",
+    "test:tag": "cucumber-js --require-module ts-node/register --require src/step-definitions/**/*.ts --require src/support/**/*.ts src/features --format json:reports/cucumber-report.json --tags",
+    "report": "node src/scripts/generate-html-report.js",
+    "prepare": "npx playwright install --with-deps"
   },
   "keywords": [],
   "devDependencies": {
@@ -15,6 +26,7 @@
     "@playwright/test": "^1.52.0",
     "@types/chai": "^5.2.2",
     "chai": "^5.2.0",
+    "cross-env": "^7.0.3",
     "multiple-cucumber-html-reporter": "^3.9.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"

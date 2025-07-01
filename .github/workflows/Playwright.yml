@@ -1,10 +1,10 @@
 name: Tests Playwright + Cucumber
 
 on:
-  workflow_dispatch:        # Permite ejecución manual en Actions
+  workflow_dispatch:
   pull_request:
     branches:
-      - main                # Ejecutar solo para PRs a la rama main
+      - main
 
 jobs:
   test:
@@ -28,8 +28,8 @@ jobs:
       - name: Limpiar screenshots y reports
         run: rm -rf screenshots reports
 
-      - name: Ejecutar pruebas
-        run: npm test
+      - name: Ejecutar tests @SauceDemo All browser
+        run: npm run test:allLocal
 
       - name: Guardar reporte JSON de Cucumber
         if: always()

@@ -1,3 +1,5 @@
+@SauceDemo
+@carrito
 Feature: Manejo del carrito de compras
 
   Scenario: El usuario puede agregar un producto al carrito desde la página de productos
