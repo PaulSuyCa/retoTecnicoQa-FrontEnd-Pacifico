@@ -29,7 +29,7 @@ jobs:
         run: rm -rf screenshots reports
 
       - name: Ejecutar tests @SauceDemo All browser
-        run: npm run test:allLocal
+        run: npm run test:allRemote
 
       - name: Guardar reporte JSON de Cucumber
         if: always()

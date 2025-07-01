@@ -1,5 +1,5 @@
 @SauceDemo
-@checkout
+@Checkout
 Feature: Proceso de compra en SauceDemo
 
   Scenario: El usuario puede completar el proceso de compra hasta la confirmación
