@@ -1,14 +1,14 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "commonjs",
-    "moduleResolution": "node",
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "outDir": "dist",
-    "rootDir": "src"
+    "target": "esnext",                      // JS moderno
+    "module": "commonjs",                    // Módulos clásicos de Node
+    "moduleResolution": "node",              // Resolución estilo Node
+    "esModuleInterop": true,                 // Importar módulos comunes de JS/TS
+    "skipLibCheck": true,                    // Ignora errores en archivos de tipos de dependencias
+    "forceConsistentCasingInFileNames": true,// Evita problemas de mayúsculas/minúsculas
+    "strict": true,                          // Tipado estricto (¡recomendado!)
+    "outDir": "dist",                        // Carpeta de salida de JS compilado (si compilas)
+    "rootDir": "src"                         // Carpeta raíz de tu código fuente                
   },
   "include": [
     "src/**/*.ts"
