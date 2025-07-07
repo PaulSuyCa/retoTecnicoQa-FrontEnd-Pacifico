@@ -1,5 +1,4 @@
 import { When, Then } from '@cucumber/cucumber';
-import { expect } from 'chai';
 import { CustomWorld } from '../support/world';
 import { CheckoutPage } from '../pages/CheckoutPage';
 
@@ -14,5 +13,5 @@ When('completa el proceso de compra con los datos {string}, {string} y código p
 
 Then('debería ver el mensaje de confirmación {string}', async function (this: CustomWorld, confirmation: string) {
   const confirmMsg = await this.checkoutPage.getConfirmation();
-  expect(confirmMsg).to.equal(confirmation);
+  await this.checkoutPage.assertCheckout(confirmMsg, confirmation);
 });

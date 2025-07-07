@@ -38,7 +38,8 @@ Before(async function (this: CustomWorld) {
     browserLauncher = chromium;
   }
   
-  this.browser = await browserLauncher.launch({ headless: true });  // Inicia Chrome en modo headless
+  this.browser = await browserLauncher.launch({ headless: true });  // Inicia Chrome en modo headless CI
+//  this.browser = await browserLauncher.launch({ headless: false, slowMo: 300 });  // Inicia Chrome en modo headless y esperar 300ms  this.browser = await browserLauncher.launch({ headless: false, slowMo: 300 });  // Inicia Chrome en modo headless y esperar 300ms
   this.context = await this.browser.newContext();                   // Nuevo contexto/pestaña limpia
   this.page = await this.context.newPage();                         // Nueva página
 });

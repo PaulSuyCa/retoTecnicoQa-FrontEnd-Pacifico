@@ -1,0 +1,66 @@
+name: Tests Playwright + Cucumber
+
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Tag a ejecutar"
+        required: false
+        default: "@SauceDemo"
+      browser:
+        description: "Browser a ejecutar (chromium | firefox | webkit)"
+        required: false
+        default: "chromium"
+        type: choice
+        options:
+          - chromium
+          - firefox
+          - webkit
+      branch:
+        description: "Rama a probar"
+        required: false
+        default: "develop"
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Instalar dependencias
+        run: npm install
+
+      - name: Instalar navegadores Playwright
+        run: npx playwright install --with-deps
+
+      - name: Limpiar screenshots y reports
+        run: rm -rf screenshots reports
+
+      - name: Ejecutar tests por tag y browser
+        run: npm run test:${{ github.event.inputs.browser}}:tag -- --tags "${{ github.event.inputs.tag}}"
+
+      - name: Guardar reporte JSON de Cucumber
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cucumber-report
+          path: reports/
+
+      - name: Generar reporte HTML
+        run: npm run report
+
+      - name: Guardar reporte HTML
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: html-report
+          path: reports/html/

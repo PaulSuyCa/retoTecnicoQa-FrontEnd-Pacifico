@@ -1,4 +1,4 @@
-@loginError
+@LoginError
 Feature: Inicio de sesión en SauceDemo Error
 
   Scenario: El usuario puede iniciar sesión con credenciales erroneas

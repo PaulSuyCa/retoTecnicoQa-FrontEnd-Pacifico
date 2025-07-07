@@ -1,4 +1,5 @@
 import { Page } from 'playwright';
+import { expect } from 'chai';
 
 export class CheckoutPage {
   constructor(private page: Page) {}
@@ -16,5 +17,11 @@ export class CheckoutPage {
 
   async getConfirmation(): Promise<string | null> {
     return this.page.textContent('.complete-header');
+  }
+
+  //Metodos Assertions 
+  async assertCheckout(confirmMsg: string[], confirmation: string) {
+    expect(confirmMsg, '[ERROR] No se encontró el producto seleccionado').to.include(confirmation);
+    console.info(`[INFO] El producto seleccionado: "${confirmation}" está en el carrito`);
   }
 }

@@ -57,7 +57,7 @@ npm run test:firefox:tag --tags "@SauceDemo"
 npm run test:webkit:tag --tags "@SauceDemo"
 ```
 
-> Cambia `@SauceDemo` por el tag que necesites (`@login`, `@smoke`, etc).
+> Cambia `@SauceDemo` por el tag que necesites (`@login`, etc).
 
 ---
 
