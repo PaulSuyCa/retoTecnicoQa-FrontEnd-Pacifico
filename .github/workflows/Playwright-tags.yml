@@ -40,7 +40,7 @@ jobs:
         run: rm -rf screenshots reports
 
       - name: Ejecutar tests por tag y browser
-        run: npm run test:${{ github.event.inputs.browser}}:tag -- --tags "${{ github.event.inputs.tag}}"
+        run: npm run test:${{ github.event.inputs.browser}}:tag -- tags "${{ github.event.inputs.tag}}"
 
       - name: Guardar reporte JSON de Cucumber
         if: always()
