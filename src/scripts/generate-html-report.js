@@ -16,8 +16,21 @@ reporter.generate({
     },
     device: 'Local test machine', // Nombre del equipo/dispositivo de pruebas
     platform: {
-      name: 'windows', // Sistema operativo
-      version: '11'    // Versión del sistema operativo
+      name: os.platform(), // windows, darwin, linux
+      version: os.release(),
+    },
+    execution: {
+      date: now.toLocaleDateString(),
+      time: now.toLocaleTimeString(),
     }
+  },
+  customData: {
+    title: 'Información del Proyecto',
+    data: [
+//      { label: 'Proyecto', value: 'Automatización SauceDemo QA Frontend' },
+//      { label: 'Ejecutado por', value: os.userInfo().username },
+      { label: 'Fecha', value: now.toLocaleString() },
+//      { label: 'Repositorio', value: 'https://github.com/PaulSuyCa/retoTecnicoQa-FrontEnd-Pacifico' }
+    ]
   }
 });
