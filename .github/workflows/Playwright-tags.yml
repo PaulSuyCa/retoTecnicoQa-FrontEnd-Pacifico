@@ -1,4 +1,4 @@
-name: Tests Playwright + Cucumber
+name: Tests Playwright + Cucumber - tags
 
 on:
   workflow_dispatch:
