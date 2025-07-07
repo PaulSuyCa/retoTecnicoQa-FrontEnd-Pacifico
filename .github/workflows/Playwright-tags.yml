@@ -1,10 +1,25 @@
-name: Tests Playwright + Cucumber
+name: Tests Playwright + Cucumber - tags
 
 on:
   workflow_dispatch:
-  pull_request:
-    branches:
-      - main
+    inputs:
+      tag:
+        description: "Tag a ejecutar"
+        required: false
+        default: "@SauceDemo"
+      browser:
+        description: "Browser a ejecutar (chromium | firefox | webkit)"
+        required: false
+        default: "chromium"
+        type: choice
+        options:
+          - chromium
+          - firefox
+          - webkit
+      branch:
+        description: "Rama a probar"
+        required: false
+        default: "develop"
 
 jobs:
   test:
@@ -13,6 +28,8 @@ jobs:
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.branch }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -28,8 +45,8 @@ jobs:
       - name: Limpiar screenshots y reports
         run: rm -rf screenshots reports
 
-      - name: Ejecutar tests @SauceDemo All browser
-        run: npm run test:allRemote
+      - name: Ejecutar tests por tag y browser
+        run: npm run test:${{ github.event.inputs.browser}}:tag -- --tags "${{ github.event.inputs.tag}}"
 
       - name: Guardar reporte JSON de Cucumber
         if: always()

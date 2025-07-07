@@ -1,3 +1,5 @@
+@SauceDemo
+@Login
 Feature: Inicio de sesión en SauceDemo
 
   Scenario: El usuario puede iniciar sesión con credenciales válidas
