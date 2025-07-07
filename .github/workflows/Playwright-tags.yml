@@ -16,10 +16,6 @@ on:
           - chromium
           - firefox
           - webkit
-      branch:
-        description: "Rama a probar"
-        required: false
-        default: "develop"
 
 jobs:
   test:
@@ -28,8 +24,6 @@ jobs:
     steps:
       - name: Checkout código
         uses: actions/checkout@v4
-        with:
-          ref: ${{ github.event.inputs.branch }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
